@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="./pics/cropped_image.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Heaven</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #111;
+            color: white;
+        }
+
+        .faq-container {
+            width: 90%;
+            margin: 50px auto;
+            background-color: #1f1f1f;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .faq-container h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #00bfff;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-question {
+            background-color: #00bfff;
+            color: black;
+            padding: 10px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-answer {
+            display: none;
+            background-color: #2c2c2c;
+            padding: 10px;
+            margin-top: 10px;
+            border-left: 4px solid #00bfff;
+            border-radius: 5px;
+        }
+
+        .faq-question:hover {
+            background-color: #007bb5;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background: linear-gradient(90deg, rgba(255, 100, 150, 1) 0%, rgba(255, 200, 0, 1) 100%);
+            border-radius: 5px;
+            padding: 10px 20px;
+        }
+
+        .navbar-brand img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .nav-link {
+            color: #fff !important;
+            font-size: 18px;
+            font-weight: 500;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #f8f9fa !important;
+            transform: scale(1.1);
+        }
+
+        .navbar-toggler {
+            border-color: #fff;
+        }
+
+        .navbar-toggler-icon {
+            background-color: #fff;
+        }
+
+        /* Social media icons styling */
+        .social-icons a {
+            color: white;
+            font-size: 24px;
+            margin: 0 10px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #f8f9fa;
+            transform: scale(1.2);
+        }
+
+        /* Add some spacing on the right of the navbar */
+        .navbar-nav {
+            margin-left: auto;
+        }
+
+        /* Mobile view improvements */
+        @media (max-width: 768px) {
+            .navbar-nav {
+                margin-left: 0;
+                text-align: center;
+            }
+
+            .faq-container {
+                width: 95%;
+                margin: 20px auto;
+            }
+
+            .faq-question {
+                font-size: 16px;
+            }
+
+            .faq-answer {
+                font-size: 14px;
+            }
+
+            /* Footer */
+            .container {
+                width: 100%;
+            }
+
+            .social-icons {
+                margin-top: 15px;
+            }
+
+            /* Adjust text size in main content */
+            .text-center p {
+                font-size: 14px;
+            }
+        }
+
+        /* Adjustments for even smaller screens (mobile portrait) */
+        @media (max-width: 480px) {
+            .navbar-brand img {
+                width: 30px;
+                height: 30px;
+            }
+
+            .nav-link {
+                font-size: 16px;
+            }
+
+            .faq-question {
+                font-size: 14px;
+            }
+
+            .faq-answer {
+                font-size: 12px;
+            }
+
+            .text-center p {
+                font-size: 12px;
+                margin-left: 10%;
+                margin-right: 10%;
+            }
+
+            .container {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="./pics/cropped_image.png" alt="Beauty Heaven Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="./index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./about.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./project.html">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./contact.html">Contact</a>
+                </li>
+                <li class="nav-item social-icons">
+                    <a href="https://www.instagram.com/b.eauty_heaven?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="me-4">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
+                <li class="nav-item social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=61574599370424" class="me-4">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </li>
+                <li class="nav-item social-icons">
+                    <a href="https://www.tiktok.com/@b_eauty.heaven?is_from_webapp=1&sender_device=pc" class="me-4">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </li>
+                <li class="nav-item social-icons">
+                    <a href="https://www.threads.net/@b.eauty_heaven" class="me-4">
+                        <i class="fab fa-threads"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<br>
+
+<img width="100%" src="./pics/Beauty Heaven.png" alt="">
+<hr>
+<br>
+
+<center><h3><b>FAQ</b></h3></center>
+
+<div class="faq-container">
+    <h1>Frequently Asked Questions (FAQ)</h1>
+    
+    <div class="faq-item">
+        <div class="faq-question">Why should I buy product from this site?</div>
+        <div class="faq-answer">This site offers the customers to buy product at reasonable price and also offers the best quality products.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">Is there cash on delivery or payment in advance?</div>
+        <div class="faq-answer">This site offers customers cash on delivery; no payment required in advance.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">What should I do in case of wrong delivery?</div>
+        <div class="faq-answer">In case of wrong delivery, you can return the product within "7 days" with a short and simple procedure.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">In how many days I get my delivery?</div>
+        <div class="faq-answer">We will deliver the product within 3-5 working days.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">How do I place my order?</div>
+        <div class="faq-answer">To place your order, DM us; some information is required, not personal information for placing an order.</div>
+    </div>
+</div>
+
+<br>
+<hr>
+<br>
+<center><h3><b>OUR AIM</b></h3></center>
+<br>
+<center>
+The aim of this project is to provide a platform for Girls where they can order beauty and organic products online. The platform will provide a wide variety of products at affordable prices.
+<br>
+<hr>
+</center>
+<i style="color: white;margin-left: 35%;" class="fa-solid fa-circle"></i> &nbsp;Discover top skincare, makeup, and haircare from beauty heaven. <br>
+<i style="color: white;margin-left: 35%;" class="fa-solid fa-circle"></i> &nbsp;High-quality ingredients for glowing, healthy skin. <br>
+<i style="color: white;margin-left: 35%;" class="fa-solid fa-circle"></i> &nbsp;Explore the beauty products and exclusive collections. <br>
+<i style="color: white;margin-left: 35%;" class="fa-solid fa-circle"></i> &nbsp;Easy-to-order product for a seamless shopping journey. <br>
+<i style="color: white;margin-left: 35%;" class="fa-solid fa-circle"></i> &nbsp;Be the first to shop our beauty products. <br>
+<i style="color: white;margin-left: 35%;" class="fa-solid fa-circle"></i> &nbsp;Shop with confidence, knowing our products are thoroughly tested. <br>
+<i style="color: white;margin-left: 35%;" class="fa-solid fa-circle"></i> &nbsp;Affordable options without compromising on quality. <br>
+<i style="color: white;margin-left: 35%;" class="fa-solid fa-circle"></i> &nbsp;Find the perfect beauty gift for friends and loved ones. <br>
+<i style="color: white;margin-left: 35%;" class="fa-solid fa-circle"></i> &nbsp;Enhance your natural beauty with products that care for you. <br>
+<i style="color: white;margin-left: 35%;" class="fa-solid fa-circle"></i> &nbsp;We are committed to your happiness with every purchase. <br><br>
+
+<center>
+<p style="margin-left: 15%;margin-right: 15%;">With a vision to empower individuals to embrace their beauty confidently, Beauty Heaven was established as an online cosmetic store in 2015. Recognizing that beauty is a personal, evolving journey, we understand that achieving the perfect skincare and makeup routine requires more than just purchasing products. Through our platform, we aim to provide not only top-tier cosmetics but also expert advice, personalized recommendations, and valuable beauty tips to help you along your beauty journey. While our products lay the foundation, your beauty transformation is completed with consistency, self-care, and a commitment to choosing the right products for your unique needs. At Beauty Heaven, we’re dedicated to guiding you toward achieving your best look, inside and out.</p>
+</center>
+<br>
+<hr>
+<br>
+<center><h3><b>PURPOSE</b></h3></center>
+<br>
+<br>
+<center>
+<h6 style="color: white;" class="text-uppercase fw-bold mb-4">
+  <img width="200px" src="./pics/cropped_image.png" alt=""> &nbsp;BEAUTY HEAVEN <br>
+</h6>
+<p style="margin-left: 15%;margin-right: 15%;">The purpose of starting Beauty Heaven was to create a space where individuals could find high-quality, effective beauty and skincare products that not only enhance their appearance but also nurture their well-being. The founders of Beauty Heaven recognized that beauty is deeply personal, and every person deserves access to products that cater to their unique needs and preferences. With a focus on using premium ingredients, cutting-edge formulas, and offering a wide range of options for all skin types and concerns, Beauty Heaven aimed to provide a one-stop destination for those seeking both luxury and effectiveness in their beauty routines. The brand was born out of a desire to empower individuals to embrace their natural beauty confidently and promote self-care as a key component of every beauty regimen.</p>
+</center>
+<br>
+<hr>
+<!-- Footer -->
+<footer>
+  <div class="text-center mt-5">
+      <ul class="list-unstyled d-flex justify-content-center" style="background-color: red;">
+          <li class="mx-4" style="color: white; font-weight: bolder;">HAVE ANY QUESTIONS...?</li>
+          <li class="mx-4"><a href="./contact.html" class="btn btn-dark" style="color: white; font-weight: bolder;">Contact</a></li>
+      </ul>
+  </div>
+
+  <!-- Footer Content -->
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+      <div class="me-5 d-none d-lg-block">
+          <span style="color: white;">Get connected with us on social networks:</span>
+      </div>
+      <div>
+          <a href="https://www.instagram.com/b.eauty_heaven?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="me-4 text-reset"><i style="color: white;" class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=61574599370424" class="me-4 text-reset"><i style="color: white;" class="fab fa-facebook-f"></i></a>
+          <a href="https://www.tiktok.com/@b_eauty.heaven?is_from_webapp=1&sender_device=pc" class="me-4 text-reset"><i style="color: white;" class="fab fa-tiktok"></i></a>
+          <a href="https://www.threads.net/@b.eauty_heaven" class="me-4 text-reset"><i style="color: white;" class="fab fa-threads"></i></a>
+      </div>
+  </section>
+
+  <section class="mt-5">
+      <div class="container text-center text-md-start">
+          <div class="row">
+              <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                  <h6 style="color: white;" class="text-uppercase fw-bold mb-4">
+                      <img width="30px" src="./pics/cropped_image.png" alt=""> &nbsp;BEAUTY HEAVEN
+                  </h6>
+                  <p style="color: white;">
+                      Where beauty meets luxury and self-care.<br>
+                      Discover a curated collection of cosmetics designed to elevate your beauty routine.
+                  </p>
+              </div>
+              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <h6 style="color: white;" class="text-uppercase fw-bold mb-4">Products</h6>
+                  <p style="color: white;"><a href="https://www.instagram.com/p/DHXzFeRIJhx/" class="footer-link">BNB KIT</a></p>
+                  <p style="color: white;"><a href="#" class="footer-link">Beauty Accessories</a></p>
+                  <p style="color: white;"><a href="#" class="footer-link">Skincare Essentials</a></p>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="text-center p-4" style="background-color: #222;">
+      <div style="color: white;">
+          <p class="mt-3" style="color: white;">2025 Beauty Heaven. All Rights Reserved.</p>
+      </div>
+  </section>
+</footer>
+<br>
+</body>
+</html>
